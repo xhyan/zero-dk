@@ -11,6 +11,8 @@ import com.xhyan.zero.dk.admin.service.AbstractService;
 import com.xhyan.zero.dk.admin.service.ApplicationService;
 import com.xhyan.zero.dk.admin.service.ConsumerService;
 import com.xhyan.zero.dk.admin.service.ProviderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +22,11 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Created by bieber on 2015/6/4.
  */
+@Service("applicationService")
 public class ApplicationServiceImpl extends AbstractService implements ApplicationService {
-
+    @Autowired
     private ProviderService providerService;
-
+    @Autowired
     private ConsumerService consumerService;
 
     @Override

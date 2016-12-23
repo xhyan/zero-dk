@@ -6,8 +6,9 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     
-    <dubbo:application name="${dubbo.application.name}" owner="${dubbo.application.owner}"/>
+    <dubbo:application name="common-monitor" owner="xhyan" />
 
-    <dubbo:reference interface="com.dubboclub.dk.storage.StatisticsStorage" check="false"  id="statisticsStorage"/>
-
+    <dubbo:registry address="zookeeper://10.128.31.85:2181" check="false"></dubbo:registry>
+    <dubbo:reference interface="com.xhyan.zero.dk.storage.StatisticsStorage" check="false" id="statisticsStorage"/>
+    <dubbo:reference interface="com.alibaba.dubbo.registry.RegistryService" check="false" id="registryService"/>
 </beans>

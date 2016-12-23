@@ -1,6 +1,6 @@
 package com.xhyan.zero.dk.web.properties;
 
-import com.dubboclub.dk.web.utils.ConfigUtils;
+import com.xhyan.zero.dk.web.utils.ConfigUtils;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 import java.io.IOException;

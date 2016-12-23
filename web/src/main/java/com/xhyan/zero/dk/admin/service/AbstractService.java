@@ -7,15 +7,19 @@ import com.xhyan.zero.dk.admin.model.BasicModel;
 import com.xhyan.zero.dk.admin.sync.RegistryServerSync;
 import com.xhyan.zero.dk.admin.sync.util.Pair;
 import com.xhyan.zero.dk.admin.sync.util.Tool;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.*;
 import java.util.concurrent.ConcurrentMap;
 
 /**
  * Created by bieber on 2015/6/3.
  */
+@Component("abstractService")
 public abstract class AbstractService {
 
+    @Resource
     private RegistryServerSync registryServerSync;
 
     protected void update(URL oldURL,URL newURL){

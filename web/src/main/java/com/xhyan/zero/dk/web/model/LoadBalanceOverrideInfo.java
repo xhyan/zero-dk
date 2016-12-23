@@ -31,7 +31,7 @@ public class LoadBalanceOverrideInfo extends OverrideInfo {
         this.loadbalance = loadbalance;
     }
 
-    public static LoadBalanceOverrideInfo valueOf(com.dubboclub.dk.admin.model.Override override){
+    public static LoadBalanceOverrideInfo valueOf(com.xhyan.zero.dk.admin.model.Override override){
         String loadBalance = null;
         String methods = null;
         if(!org.apache.commons.lang.StringUtils.isEmpty(override.getParams())){

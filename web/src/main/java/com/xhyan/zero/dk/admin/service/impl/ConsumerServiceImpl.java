@@ -7,12 +7,14 @@ import com.xhyan.zero.dk.admin.service.AbstractService;
 import com.xhyan.zero.dk.admin.service.ConsumerService;
 import com.xhyan.zero.dk.admin.sync.util.Pair;
 import com.xhyan.zero.dk.admin.sync.util.SyncUtils;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by bieber on 2015/6/6.
  */
+@Service("consumerService")
 public class ConsumerServiceImpl extends AbstractService implements ConsumerService {
 
     @Override

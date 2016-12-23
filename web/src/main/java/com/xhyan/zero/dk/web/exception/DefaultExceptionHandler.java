@@ -1,6 +1,6 @@
 package com.xhyan.zero.dk.web.exception;
 
-import com.dubboclub.dk.web.model.BasicResponse;
+import com.xhyan.zero.dk.web.model.BasicResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

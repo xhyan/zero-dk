@@ -17,7 +17,7 @@ package com.xhyan.zero.dk.admin.model;
 
 import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.common.URL;
-import com.dubboclub.dk.admin.sync.util.Tool;
+import com.xhyan.zero.dk.admin.sync.util.Tool;
 
 import java.util.Date;
 import java.util.List;

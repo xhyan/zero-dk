@@ -21,8 +21,8 @@ public class OverrideInfo {
     private String serviceKey;
 
 
-    public Override toOverride(){
-        Override override = new Override();
+    public com.xhyan.zero.dk.admin.model.Override toOverride(){
+        com.xhyan.zero.dk.admin.model.Override override = new com.xhyan.zero.dk.admin.model.Override();
         override.setParams(parameters);
         override.setEnabled(enable);
         override.setApplication(StringUtils.isEmpty(application) ? Constants.ANY_VALUE : application);
@@ -30,7 +30,7 @@ public class OverrideInfo {
         return override;
     }
 
-    public static OverrideInfo valueOf(Override override){
+    public static OverrideInfo valueOf(com.xhyan.zero.dk.admin.model.Override override){
         OverrideInfo overrideInfo = new OverrideInfo();
         overrideInfo.setAddress(override.getAddress());
         overrideInfo.setApplication(override.getApplication()==null? Constants.ANY_VALUE:override.getApplication());

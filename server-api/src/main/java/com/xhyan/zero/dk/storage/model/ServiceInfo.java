@@ -1,4 +1,4 @@
-package com.dubboclub.dk.storage.model;
+package com.xhyan.zero.dk.storage.model;
 
 /**
  * Created by bieber on 2015/11/7.

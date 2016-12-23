@@ -1,6 +1,6 @@
 package com.xhyan.zero.dk.storage.mapper;
 
-import com.dubboclub.dk.storage.model.ApplicationInfo;
+import com.xhyan.zero.dk.storage.model.ApplicationInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

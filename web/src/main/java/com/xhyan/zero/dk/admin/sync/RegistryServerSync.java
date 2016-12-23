@@ -27,7 +27,9 @@ import com.xhyan.zero.dk.admin.sync.util.SyncUtils;
 import com.xhyan.zero.dk.admin.sync.util.Tool;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +40,7 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * @author bieber
  */
+@Component("registryServerSync")
 public class RegistryServerSync implements InitializingBean, DisposableBean, NotifyListener {
 
     private static final Logger logger = LoggerFactory.getLogger(RegistryServerSync.class);
@@ -55,8 +58,8 @@ public class RegistryServerSync implements InitializingBean, DisposableBean, Not
                                             Constants.CHECK_KEY, String.valueOf(false));
 
     private static final AtomicLong ID = new AtomicLong();
-
-    private RegistryService registryService;
+	@Resource
+	private RegistryService registryService;
 
     // ConcurrentMap<category, ConcurrentMap<servicename, Map<Long, URL>>>
     private final ConcurrentMap<String, ConcurrentMap<String, Map<Long, URL>>> registryCache = new ConcurrentHashMap<String, ConcurrentMap<String, Map<Long, URL>>>();
@@ -155,9 +158,6 @@ public class RegistryServerSync implements InitializingBean, DisposableBean, Not
             services.putAll(categoryEntry.getValue());
         }
         
-    }
-    public void setRegistryService(RegistryService registryService) {
-        this.registryService = registryService;
     }
 }
     

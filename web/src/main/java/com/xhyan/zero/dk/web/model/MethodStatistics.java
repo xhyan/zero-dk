@@ -1,7 +1,7 @@
 package com.xhyan.zero.dk.web.model;
 
 
-import com.dubboclub.dk.storage.model.Statistics;
+import com.xhyan.zero.dk.storage.model.Statistics;
 
 import java.util.Collection;
 

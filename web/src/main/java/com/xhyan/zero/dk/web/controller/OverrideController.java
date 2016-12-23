@@ -2,10 +2,10 @@ package com.xhyan.zero.dk.web.controller;
 
 import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.common.utils.StringUtils;
-import com.dubboclub.dk.admin.model.Provider;
-import com.dubboclub.dk.admin.service.OverrideService;
-import com.dubboclub.dk.admin.service.ProviderService;
-import com.dubboclub.dk.web.model.*;
+import com.xhyan.zero.dk.admin.model.Provider;
+import com.xhyan.zero.dk.admin.service.OverrideService;
+import com.xhyan.zero.dk.admin.service.ProviderService;
+import com.xhyan.zero.dk.web.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -34,9 +34,9 @@ public class OverrideController {
     @RequestMapping("/provider/{serviceKey}/list.htm")
     public @ResponseBody
     List<OverrideInfo>  listOverridesByProvider(@PathVariable("serviceKey")String serviceKey) throws UnsupportedEncodingException {
-        List<Override> overrideList =  overrideService.listByServiceKey(URLDecoder.decode(serviceKey,"UTF-8"));
+        List<com.xhyan.zero.dk.admin.model.Override> overrideList =  overrideService.listByServiceKey(URLDecoder.decode(serviceKey,"UTF-8"));
         List<OverrideInfo> overrideInfos = new ArrayList<OverrideInfo>();
-        for(Override override:overrideList){
+        for(com.xhyan.zero.dk.admin.model.Override override:overrideList){
             overrideInfos.add(OverrideInfo.valueOf(override));
         }
         return overrideInfos;
@@ -46,9 +46,9 @@ public class OverrideController {
     @RequestMapping("/provider/{serviceKey}/weight-list.htm")
     public @ResponseBody
     List<WeightOverrideInfo>  listWeightOverridesByProvider(@PathVariable("serviceKey")String serviceKey) throws UnsupportedEncodingException {
-        List<Override> overrideList =  overrideService.listByServiceKey(URLDecoder.decode(serviceKey,"UTF-8"));
+        List<com.xhyan.zero.dk.admin.model.Override> overrideList =  overrideService.listByServiceKey(URLDecoder.decode(serviceKey,"UTF-8"));
         List<WeightOverrideInfo> overrideInfos = new ArrayList<WeightOverrideInfo>();
-        for(Override override:overrideList){
+        for(com.xhyan.zero.dk.admin.model.Override override:overrideList){
             WeightOverrideInfo weightOverrideInfo = WeightOverrideInfo.valueOf(override);
             if(weightOverrideInfo!=null){
                 overrideInfos.add(weightOverrideInfo);
@@ -60,9 +60,9 @@ public class OverrideController {
     @RequestMapping("/provider/{serviceKey}/loadbalance-list.htm")
     public @ResponseBody
     List<LoadBalanceOverrideInfo>  listLoadBalanceOverridesByProvider(@PathVariable("serviceKey")String serviceKey) throws UnsupportedEncodingException {
-        List<Override> overrideList =  overrideService.listByServiceKey(URLDecoder.decode(serviceKey,"UTF-8"));
+        List<com.xhyan.zero.dk.admin.model.Override> overrideList =  overrideService.listByServiceKey(URLDecoder.decode(serviceKey,"UTF-8"));
         List<LoadBalanceOverrideInfo> overrideInfos = new ArrayList<LoadBalanceOverrideInfo>();
-        for(Override override:overrideList){
+        for(com.xhyan.zero.dk.admin.model.Override override:overrideList){
             LoadBalanceOverrideInfo loadBalanceOverrideInfo = LoadBalanceOverrideInfo.valueOf(override);
             if(loadBalanceOverrideInfo!=null){
                 overrideInfos.add(loadBalanceOverrideInfo);
@@ -93,7 +93,7 @@ public class OverrideController {
     @RequestMapping("/provider/{serviceKey}/saveOverride.htm")
     public @ResponseBody
     BasicResponse saveOverride(@PathVariable("serviceKey")String serviceKey, @RequestBody OverrideInfo overrideInfo) throws UnsupportedEncodingException {
-        Override override = overrideInfo.toOverride();
+        com.xhyan.zero.dk.admin.model.Override override = overrideInfo.toOverride();
         override.setService(URLDecoder.decode(serviceKey, "UTF-8"));
         BasicResponse response = new BasicResponse();
         if(overrideInfo.getId()==null){
@@ -110,11 +110,11 @@ public class OverrideController {
     BasicResponse operate(@PathVariable("id")Long id, @PathVariable("type")String type){
         BasicResponse response = new BasicResponse();
         if("enable".equals(type)){
-            Override override = overrideService.getById(id);
+            com.xhyan.zero.dk.admin.model.Override override = overrideService.getById(id);
             override.setEnabled(true);
             overrideService.update(override);
         }else if("disable".equals(type)){
-            Override override = overrideService.getById(id);
+            com.xhyan.zero.dk.admin.model.Override override = overrideService.getById(id);
             override.setEnabled(false);
             overrideService.update(override);
         }else if("delete".equals(type)){
@@ -134,7 +134,7 @@ public class OverrideController {
         String[] idArray = Constants.COMMA_SPLIT_PATTERN.split(ids);
         if("enable".equals(type)){
             for(String id:idArray){
-                Override override = overrideService.getById(Long.parseLong(id));
+                com.xhyan.zero.dk.admin.model.Override override = overrideService.getById(Long.parseLong(id));
                 if(override.isEnabled()){
                     continue;
                 }
@@ -143,7 +143,7 @@ public class OverrideController {
             }
         }else if("disable".equals(type)){
             for(String id:idArray){
-                Override override = overrideService.getById(Long.parseLong(id));
+                com.xhyan.zero.dk.admin.model.Override override = overrideService.getById(Long.parseLong(id));
                 if(!override.isEnabled()){
                     continue;
                 }
@@ -166,7 +166,7 @@ public class OverrideController {
     @RequestMapping("/{id}/detail.htm")
     public @ResponseBody
     OverrideInfo getOverrideById(@PathVariable("id")Long id){
-        Override override =  overrideService.getById(id);
+        com.xhyan.zero.dk.admin.model.Override override =  overrideService.getById(id);
         return OverrideInfo.valueOf(override);
     }
 

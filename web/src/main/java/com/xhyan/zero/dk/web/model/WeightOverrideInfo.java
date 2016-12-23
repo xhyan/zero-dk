@@ -19,7 +19,7 @@ public class WeightOverrideInfo extends  OverrideInfo{
     public void setWeight(int weight) {
         this.weight = weight;
     }
-    public static WeightOverrideInfo valueOf(com.dubboclub.dk.admin.model.Override override){
+    public static WeightOverrideInfo valueOf(com.xhyan.zero.dk.admin.model.Override override){
         String weight = null;
         if(!org.apache.commons.lang.StringUtils.isEmpty(override.getParams())){
             Map<String,String> parameters = StringUtils.parseQueryString(override.getParams());

@@ -8,12 +8,14 @@ import com.xhyan.zero.dk.admin.service.RouteService;
 import com.xhyan.zero.dk.admin.sync.util.Pair;
 import com.xhyan.zero.dk.admin.sync.util.SyncUtils;
 import com.xhyan.zero.dk.admin.sync.util.Tool;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by bieber on 2015/7/25.
  */
+@Service("routeService")
 public class RouteServiceImpl extends AbstractService implements RouteService {
 
     @Override

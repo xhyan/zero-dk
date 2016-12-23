@@ -2,11 +2,11 @@ package com.xhyan.zero.dk.web.controller;
 
 import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.common.utils.ConfigUtils;
-import com.dubboclub.dk.admin.model.Provider;
-import com.dubboclub.dk.admin.service.OverrideService;
-import com.dubboclub.dk.admin.service.ProviderService;
-import com.dubboclub.dk.admin.sync.util.Tool;
-import com.dubboclub.dk.web.model.BasicResponse;
+import com.xhyan.zero.dk.admin.model.Provider;
+import com.xhyan.zero.dk.admin.service.OverrideService;
+import com.xhyan.zero.dk.admin.service.ProviderService;
+import com.xhyan.zero.dk.admin.sync.util.Tool;
+import com.xhyan.zero.dk.web.model.BasicResponse;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

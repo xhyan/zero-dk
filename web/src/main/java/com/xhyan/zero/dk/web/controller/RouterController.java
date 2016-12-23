@@ -1,12 +1,12 @@
 package com.xhyan.zero.dk.web.controller;
 
 import com.alibaba.dubbo.common.Constants;
-import com.dubboclub.dk.admin.model.Provider;
-import com.dubboclub.dk.admin.model.Route;
-import com.dubboclub.dk.admin.service.ProviderService;
-import com.dubboclub.dk.admin.service.RouteService;
-import com.dubboclub.dk.web.model.BasicResponse;
-import com.dubboclub.dk.web.model.RouteAbstractInfo;
+import com.xhyan.zero.dk.admin.model.Provider;
+import com.xhyan.zero.dk.admin.model.Route;
+import com.xhyan.zero.dk.admin.service.ProviderService;
+import com.xhyan.zero.dk.admin.service.RouteService;
+import com.xhyan.zero.dk.web.model.BasicResponse;
+import com.xhyan.zero.dk.web.model.RouteAbstractInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

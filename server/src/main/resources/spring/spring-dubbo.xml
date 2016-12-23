@@ -7,7 +7,7 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 
-    <bean class="com.dubboclub.dk.monitor.DubboKeeperMonitorService" autowire="byType" id="dubboKeeperMonitorService" />
+    <bean class="com.xhyan.zero.dk.monitor.DubboKeeperMonitorService" autowire="byType" id="dubboKeeperMonitorService" />
 
     <dubbo:service interface="com.alibaba.dubbo.monitor.MonitorService" ref="dubboKeeperMonitorService" id="exportMonitorService">
         <dubbo:parameter key="interval" value="${monitor.collect.interval}"/>

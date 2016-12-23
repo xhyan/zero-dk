@@ -10,7 +10,9 @@ import com.xhyan.zero.dk.admin.service.ProviderService;
 import com.xhyan.zero.dk.admin.sync.util.Pair;
 import com.xhyan.zero.dk.admin.sync.util.SyncUtils;
 import com.xhyan.zero.dk.admin.sync.util.Tool;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,9 +20,10 @@ import java.util.Map;
 /**
  * Created by bieber on 2015/6/3.
  */
+@Service("providerService")
 public class ProviderServiceImpl extends AbstractService implements ProviderService {
 
-
+    @Resource
     private OverrideService overrideService;
 
     @Override
@@ -208,9 +211,5 @@ public class ProviderServiceImpl extends AbstractService implements ProviderServ
         URL url = SyncUtils.provider2URL(provider);
         url=url.addParameter(Constants.TIMESTAMP_KEY,System.currentTimeMillis());
         add(url);
-    }
-
-    public void setOverrideService(OverrideService overrideService) {
-        this.overrideService = overrideService;
     }
 }

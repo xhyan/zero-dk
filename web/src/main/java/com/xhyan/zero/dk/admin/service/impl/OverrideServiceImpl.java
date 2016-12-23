@@ -10,6 +10,7 @@ import com.xhyan.zero.dk.admin.service.OverrideService;
 import com.xhyan.zero.dk.admin.sync.util.Pair;
 import com.xhyan.zero.dk.admin.sync.util.SyncUtils;
 import com.xhyan.zero.dk.admin.sync.util.Tool;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,6 +21,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Created by bieber on 2015/6/13.
  */
+@Service("overrideService")
 public class OverrideServiceImpl extends AbstractService implements OverrideService {
 
 

@@ -5,6 +5,6 @@
         <setting name="lazyLoadingEnabled" value="false" />
     </settings>
     <typeAliases>
-        <package name="com.dubboclub.dk.storage.model"/>
+        <package name="com.xhyan.zero.dk.storage.model"/>
     </typeAliases>
 </configuration>

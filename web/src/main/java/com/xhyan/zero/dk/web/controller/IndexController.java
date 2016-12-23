@@ -1,12 +1,12 @@
 package com.xhyan.zero.dk.web.controller;
 
 import com.alibaba.dubbo.common.URL;
-import com.dubboclub.dk.admin.model.Application;
-import com.dubboclub.dk.admin.model.Consumer;
-import com.dubboclub.dk.admin.model.Provider;
-import com.dubboclub.dk.admin.service.ApplicationService;
-import com.dubboclub.dk.admin.service.ConsumerService;
-import com.dubboclub.dk.admin.service.ProviderService;
+import com.xhyan.zero.dk.admin.model.Application;
+import com.xhyan.zero.dk.admin.model.Consumer;
+import com.xhyan.zero.dk.admin.model.Provider;
+import com.xhyan.zero.dk.admin.service.ApplicationService;
+import com.xhyan.zero.dk.admin.service.ConsumerService;
+import com.xhyan.zero.dk.admin.service.ProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
