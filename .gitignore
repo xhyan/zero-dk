@@ -1,1 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
+/.idea/
+/server/server.iml
+/web/web.iml
+/server-api/server-api.iml
